@@ -1,0 +1,48 @@
+using System;
+class Program
+{
+    static void Main(string[] args)
+    {
+
+        Dictionary<string, int> slov = new Dictionary<string, int>
+        {
+            { "Никита",89209365130 },
+        };
+        var f = true;
+        while (f)
+        {
+            Console.WriteLine("Выберите 1(Добавить запись),2(Найти номер по имени),3(Вывести все записи),4(Выход)");
+            int input = Convert.ToInt32(Console.ReadLine());
+
+            switch (input)
+            {
+                case 1:
+                    slov.Add(Console.ReadLine(), Convert.ToInt32(Console.ReadLine()));
+                    continue;
+                case 2:
+                    string name = Console.ReadLine();
+                    if (slov.ContainsKey(name))
+                    {
+                        Console.WriteLine($"Номер: {slov[name]}");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Имя не найдено.");
+                    }
+                    continue;
+                case 3:
+                    foreach (var i in slov)
+                    {
+                        Console.WriteLine(i.Key + ":" + i.Value);
+                    }
+                    continue;
+                case 4:
+                    f = false;
+                    break;
+                default:
+                    Console.WriteLine("Данные не найдены в словаре.");
+                    continue;
+            }
+        }
+    }
+}
