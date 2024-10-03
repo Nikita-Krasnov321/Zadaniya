@@ -1,0 +1,112 @@
+using System.Security.AccessControl;
+using System.Security.Claims;
+
+internal class Program
+{
+    //Задание 1
+    static int f(int a)
+    {
+        if (a % 2 != 0) 
+        {
+            return a = 0;
+        }
+        else
+        {
+            return a / 2;
+        }
+    }
+
+    //Задание 2
+
+    static int f(int a)
+    {
+        if (a % 5 == 0)
+        {
+            return a / 5;
+        }
+        else
+        {
+            return a+=1;
+        }
+    }
+
+    //Задание 3
+    static int f(int a)
+    {
+        if (a <100 & a>=10)
+        {
+            int n = a % 10;
+            int b = a / 10;
+            Console.WriteLine(n.ToString()+b.ToString());
+            return a;
+        }
+        else 
+        { 
+            Console.WriteLine(a);
+            return a;
+        }
+    }
+
+    //Задание 4
+    //static int f(int a)
+    {
+        if (a >= 100 & a < 1000)
+        {
+            int n = a % 10;
+            int b = a / 100;
+            int c= a /10 %10;
+            Console.WriteLine(n.ToString() +c.ToString() + b.ToString());
+            return a;
+        }
+        else
+        {
+            Console.WriteLine(a);
+            return a;
+        }
+    }
+
+     Задание 5
+    //static double f(double a, double b)
+    {
+        double c = Math.Sqrt(a * a + b * b);
+        Console.WriteLine(c);
+        double AB = double.Parse(Console.ReadLine());
+        double AC = double.Parse(Console.ReadLine());
+        double DC = double.Parse(Console.ReadLine());
+        double BC= Math.Sqrt(AB * AB + AC * AC);
+        double ABCD = AB + AC + DC + Math.Sqrt(BC*BC + DC*DC);
+        Console.WriteLine(ABCD);
+        return ABCD;
+    }
+    private static void Main(string[] args)
+    {
+        //Задание 1
+        int x = Convert.ToInt32(Console.ReadLine());
+
+        Console.WriteLine( f(x));
+
+        //Задание 2
+        int x = Convert.ToInt32(Console.ReadLine());
+
+        Console.WriteLine(f(x));
+
+        //Задание 3
+        int x = int.Parse(Console.ReadLine());
+
+        f(x);
+
+        //Задание 4
+
+        int x = int.Parse(Console.ReadLine());
+
+        f(x);
+
+        // Задание 5
+
+        double a = int.Parse(Console.ReadLine());
+        double b = int.Parse(Console.ReadLine());
+        f(a,b);
+
+
+    }
+}
