@@ -1,0 +1,128 @@
+namespace Zadanie;
+internal class Program
+        //Задание 1
+{
+          static int Summa(int a, int b)
+        {
+            int c = a + b;
+            Console.Write("Сумма чисел: ");
+
+            Console.WriteLine(c);
+            return c;
+        }
+          private static void Main(string[] args)
+    {
+        
+        Console.Write("1 число ");
+        int num0=int.Parse(Console.ReadLine());
+        Console.Write("2 число ");
+
+        int num1 = int.Parse(Console.ReadLine());
+        Summa(num0, num1);
+    }
+
+        //Задание 2
+         
+        //static int Chetnost(int a)
+        {
+           if (a % 2 == 0) 
+            {
+                Console.WriteLine("Чётное");
+                return a;
+            }
+            else
+            {
+                Console.WriteLine("Нечётное");
+                return a;
+          } 
+          private static void Main(string[] args)
+        {
+        Console.Write("Введите число ");
+        int num=int.Parse(Console.ReadLine());
+        Chetnost(num);
+        }
+        
+      
+
+        //Задание 3
+
+        static int Factorial(int a)
+        {
+            int fact = 1;
+            for (int i = 2; i <= a; i++)
+            {
+                fact *= i;
+            }
+            Console.WriteLine($"Факториал : {fact}");
+            return fact;
+
+        }
+         private static void Main(string[] args)
+        {
+        Console.WriteLine("Введите число");
+        int num = int.Parse(Console.ReadLine());
+        Factorial(num);
+      }
+
+        //Задание 4
+        static string Reverse(string a)
+        {
+            char[] charArray = a.ToCharArray();
+            Array.Reverse(charArray);
+            return new string(charArray);
+        }
+          private static void Main(string[] args)
+        {
+        Console.WriteLine("Введите слово");
+        string simvol = Console.ReadLine();
+        Console.WriteLine(Reverse(simvol));
+        }
+
+        //Задание 5
+        static bool Polindrom(string a)
+        {
+            string reverseStr = "";
+            a = a.Replace(" ", "").ToLower();
+
+            for (int i = a.Length - 1; i >= 0; i--)
+            {
+                reverseStr += a[i];
+            }
+
+            return a == reverseStr;
+        }
+        private static void Main(string[] args)
+        {
+        Console.WriteLine("Введите слово");
+        string simvol = Console.ReadLine();
+        if (Polindrom(simvol))
+        {
+            Console.WriteLine("палиндромом");
+        }
+        else
+        {
+            Console.WriteLine("не палиндромом");
+        }
+        }
+
+        //Задание 6
+        static double Sred(int[] num)
+        {
+            int sum = 0;
+
+            foreach (int number in num)
+            {
+                sum += number;
+            }
+
+            return (double)sum / num.Length;
+        }
+          private static void Main(string[] args)
+        {
+        int[] numbers = { 1, 2, 3, 5, 7 };
+        double srednee = Sred(numbers);
+
+        Console.WriteLine($"Среднее: {srednee}" );
+        }
+    }
+}
